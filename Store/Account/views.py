@@ -13,12 +13,13 @@ from django.views.generic import CreateView
 from django.shortcuts import render
 
 
-
 """ import models """
+
 
 from .models import UserProfile
 from django.contrib.auth.models import User
 from .forms import RegisterUserForm
+
 
 """ View templates pages """
 

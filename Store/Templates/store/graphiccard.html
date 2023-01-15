@@ -111,52 +111,232 @@
 
     <div class="graphiccard-wrapper">
       <div class="graphiccard-content">
-        {% for item in product %}
+      {% for graphiccard_catalog in graphiccard_catalog %}
         <div class="graphiccard-item">
           <div class="graphiccard-item__img">
             <img src="../static/img/exaple_card.jpeg">
           </div>
           <div class="graphiccard-item__wrapper">
             <div class="graphiccard-item__title">
-              <a href="#" >{{ item.name }}</a></div>
+              <a href="#" >{{ graphiccard_catalog.product_name }}</a></div>
             <div class="graphiccard-item__descr">
-              <p>Гб {{ item.videomemory }}</p>
-              <p>МГц {{ item.frequency }}</p>
-              <p>{{ item.power }} Вт</p>
+              <p>Графический процессор: {{ graphiccard_catalog.GPU }}</p>
+              <p>Производитель ГП: {{ graphiccard_catalog.manufacturer_GPU }}</p>
+              <p>Тип памяти: {{ graphiccard_catalog.brand }}</p>
+              <!--<p>Скидка: {{ graphiccard_catalog.discount }}</p>
+              <p>Новинка: {{ graphiccard_catalog.new }}</p>-->
             </div>
             <div class="graphiccard-item__brand">
               <a href="#" >
                 <img src="../img/msi_logo.png" alt="">
               </a>
             </div>
-            <div class="graphiccard-item__price"><strong>164 286</strong> <span>рублей</span></div>
+            <div class="graphiccard-item__price"><strong>{{ graphiccard_catalog.price }}</strong> <span>рублей</span></div>
             <div class="graphiccard-item__btns">
-              <a href="#" class="graphiccard-link btn-shadow graphiccard-btn">Перейти</a>
+              <!--<a href="#" class="graphiccard-link btn-shadow graphiccard-btn">Перейти</a>-->
               <a href="#" class="graphiccard-buy btn-shadow__primary graphiccard-btn">Купить</a>
             </div>
           </div>
           <!--Конец карочки товара-->
         </div>
-        {% endfor %}
+      {% endfor %}
       </div>
 
-      <div class="graphiccard-panel">
+        <div class="graphiccard-panel">
+          <div class="graphiccard-panel__title">Фильтры</div>
+              <div class="graphiccard-panel__title__filter"></div>
+                <div class="form-check">
+                    <form method="get">
+
+                      <!--{{catalog_filter.form}}-->
+
+                      <fieldset>
+                          <legend>Бренд</legend>
+
+                          <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="GALAXY">
+                            <label for="id_brand">GALAXY</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="INNO3D">
+                            <label for="id_brand">INNO3D</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="MSI">
+                            <label for="id_brand">MSI</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="ASUS">
+                            <label for="id_brand">ASUS</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="COLORFUL">
+                            <label for="id_brand">COLORFUL</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="GIGABYTE">
+                            <label for="id_brand">GIGABYTE</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="Zotac">
+                            <label for="id_brand">Zotac</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="GAINWARD">
+                            <label for="id_brand">GAINWARD</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_brand" name="brand" value="Yeston">
+                            <label for="id_brand">Yeston</label>
+                          </div>
+                      </fieldset>
+
+                       <fieldset>
+                          <legend>Графический процессор</legend>
+                          <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3090Ti">
+                            <label for="id_GPU">GeForce RTX 3090Ti</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3080Ti">
+                            <label for="id_GPU">GeForce RTX 3080Ti</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3080">
+                            <label for="id_GPU">GeForce RTX 3080</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3070Ti">
+                            <label for="id_GPU">GeForce RTX 3070Ti</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3070">
+                            <label for="id_GPU">GeForce RTX 3070</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3060Ti">
+                            <label for="id_GPU">GeForce RTX 3060Ti</label>
+                          </div>
+
+                         <div>
+                            <input type="checkbox" id="id_GPU" name="GPU" value="GeForce RTX 3060">
+                            <label for="id_GPU">GeForce RTX 3060</label>
+                          </div>
+
+                      </fieldset>
+
+                         <fieldset>
+                          <legend>Тип памяти</legend>
+                          <div>
+                            <input type="checkbox" id="id_memory_type" name="memory_type" value="GDDR6X">
+                            <label for="id_memory_type">GDDR6X</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_memory_type" name="memory_type" value="GDDR6">
+                            <label for="id_memory_type">GDDR6</label>
+                          </div>
+
+                      </fieldset>
+
+                      </fieldset>
+
+                         <fieldset>
+                          <legend>Разъем питания</legend>
+
+                          <div>
+                            <input type="checkbox" id="id_power_connector" name="power_connector" value="8-pin х3">
+                            <label for="id_power_connector">8-pin х3</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_power_connector" name="power_connector" value="8-pin х2">
+                            <label for="id_power_connector">8-pin х2</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_power_connector" name="power_connector" value="8-pin x2 + 6-pin 1x">
+                            <label for="id_power_connector">8-pin x2 + 6-pin 1x</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_power_connector" name="power_connector" value="12-pin х1">
+                            <label for="id_power_connector">12-pin х1</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_power_connector" name="power_connector" value="8-pin x1 + 6-pin 1x">
+                            <label for="id_power_connector">8-pin x1 + 6-pin 1x</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" id="id_memory_type" name="power_connector" value="8-pin х1">
+                            <label for="id_power_connector">8-pin х1</label>
+                          </div>
+
+                      </fieldset>
+
+                      </fieldset>
+
+                         <fieldset>
+                          <legend>Видеоразъем</legend>
+
+                          <div>
+                            <input type="checkbox" id="id_video_connector" name="video_connector" value="1x HDMI 2.1 3x DisplayPort 1.4a">
+                            <label for="id_video_connector">1x HDMI 2.1 3x DisplayPort 1.4a</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_video_connector" name="video_connector" value="2x HDMI 2.1 3x DisplayPort 1.4a">
+                            <label for="id_video_connector">2x HDMI 2.1 3x DisplayPort 1.4a</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_video_connector" name="video_connector" value="3x HDMI 2.1 3x DisplayPort 1.4a">
+                            <label for="id_video_connector">3x HDMI 2.1 3x DisplayPort 1.4a</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" id="id_video_connector" name="video_connector" value="2x HDMI 2.1 2x DisplayPort 1.4a">
+                            <label for="id_video_connector">2x HDMI 2.1 2x DisplayPort 1.4a</label>
+                          </div>
+
+                      </fieldset>
+
+                      <button class="button_filter">Найти</button>
+
+                    </form>
+
+
+        <!--<div class="graphiccard-panel">
           <div class="graphiccard-panel__title">Фильтры</div>
 
               <div class="graphiccard-panel__title__filter">Производитель графического процессора</div>
-                 {%  for item in view.get_name %}
+                 {%  for graphiccard_catalog in view.get_name %}
                 <div class="form-check">
 
                      <input class="form-check-input" type="checkbox" value="" >
-                     <label class="form-check-label" for="flexCheckDefault">{{ item.manufacturer }}</label>
+                     <label class="form-check-label" for="flexCheckDefault">{{ graphiccard_catalog.manufacturer }}</label>
 
                 </div>
-               {% endfor %}
+               {% endfor %}-->
 
 
 
 
-          <div class="graphiccard-panel__title__filter">Бренд</div>
+          <!--<div class="graphiccard-panel__title__filter">Бренд</div>
           <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" >
               <label class="form-check-label" for="flexCheckDefault">ASUS</label>
@@ -188,7 +368,7 @@
           <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">SAPPHIRE</label>
-          </div>
+          </div>-->
       </div>
     </div>
   </div>

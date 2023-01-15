@@ -1557,7 +1557,7 @@ a {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: 0.5fr (0.6fr)[2];
-  grid-template-rows: 0.5fr repeat(2, 0.6fr);
+  grid-template-rows: 0.5fr repeat(1, 0.6fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -1615,8 +1615,25 @@ a {
   background-color: var(--white);
   border-radius: 1rem;
   margin: 0 0 0 100px;
+  padding: 15px;
 }
 .graphiccard-panel__title {
   text-align: center;
 }
+.form-check {
+margin: 15px 40px 5px 5px;
 
+}
+.button_filter {
+margin: 15px 40px 5px 5px;
+border-width: 0px;
+padding: 10px 25px 10px 25px;
+background: #cc0000;
+color: white;
+border-radius: 10px;
+}
+p,
+
+input {
+    margin: 0.4rem;
+}
