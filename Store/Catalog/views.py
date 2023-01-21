@@ -43,7 +43,6 @@ def graphiccard(request):
     graphiccard_catalog = catalog_filter.qs
     graphiccard_catalog_price = Catalog.objects.filter(price__gte=0, price__lte=1000000)
 
-
     return render(request, '../Templates/store/graphiccard.html', {'graphiccard_catalog': graphiccard_catalog,
                                                                    'catalog_filter': catalog_filter,
                                                                    'graphiccard_catalog_price': graphiccard_catalog_price})
