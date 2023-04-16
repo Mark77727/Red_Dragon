@@ -6,4 +6,3 @@ from Cart.models import Cart
 admin.site.register(CartItem)
 
 admin.site.register(Cart)
-

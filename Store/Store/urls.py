@@ -20,7 +20,7 @@ from Account.views import orders
 from Account.views import logout_view
 from Cart.views import cart
 from Cart import views
-
+from Send.views import send
 
 
 """definition URL"""
@@ -39,5 +39,10 @@ urlpatterns = [
     path('profile.html', profile, name='profile'),
     path('orders.html', orders, name='orders'),
     path('cart.html', cart, name='cart'),
-    path('add_to_cart', views.add_to_cart, name='add')
+    path('add_to_cart', views.add_to_cart, name='add'),
+
+    path('send.html', send, name='contact_page'),
+
+
+
 ]

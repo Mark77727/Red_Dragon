@@ -6,8 +6,6 @@ from django.http import JsonResponse
 from django.shortcuts import render
 import json
 
-
-
 """Import models"""
 
 from Catalog.models import Catalog

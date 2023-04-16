@@ -25,8 +25,15 @@ SECRET_KEY = 'django-insecure-_82^96l6md5^$g(-cg@-+k9*=9m%l^26%(u5i9&!hab_ey89y(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# SMTP agent
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'stalker7772710@gmail.com'
+EMAIL_HOST_PASSWORD = 'elhcwtupwcucdcvu'
+EMAIL_USE_TLS = True
+
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -40,6 +47,7 @@ INSTALLED_APPS = [
     'Catalog',
     'Cart',
     'Account',
+    'Send',
     'import_export',
     'django_filters',
 ]
